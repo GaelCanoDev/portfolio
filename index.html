@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & LOCALIZATION META TAGS -->
+    <title>Gael Cano - Full Stack Developer & IT Consultant | La Plata, CABA, San Vicente, Brandsen</title>
+    <meta name="description" content="Gael Cano - Full Stack Software Developer & IT Consultant. Web development, software solutions, and technical support in La Plata, San Vicente, Brandsen, Capital Federal (CABA), and Buenos Aires.">
+    <meta name="keywords" content="Gael Cano, Full Stack Developer, IT Consultant, Web Developer, Soporte IT, La Plata, San Vicente, Brandsen, Capital Federal, CABA, Buenos Aires, Software Developer">
+    <meta name="author" content="Gael Cano">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph for Social Media (LinkedIn, WhatsApp, Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gael Cano - Full Stack Developer & IT Consultant">
+    <meta property="og:description" content="Web development and IT consulting services in La Plata, CABA, San Vicente, Brandsen, and Buenos Aires.">
+    <meta property="og:url" content="https://gaelcanodev.vercel.app">
+
+    <!-- JSON-LD Structured Data for Local Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gael Cano",
+      "jobTitle": "Full Stack Software Developer & IT Consultant",
+      "url": "https://gaelcanodev.vercel.app",
+      "sameAs": [
+        "https://www.linkedin.com/in/GaelCanoDev",
+        "https://github.com/GaelCanoDev"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "Argentina"
+      },
+      "areaServed": [
+        "La Plata",
+        "San Vicente",
+        "Brandsen",
+        "Capital Federal",
+        "Buenos Aires"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "IT Support",
+        "JavaScript",
+        "HTML/CSS",
+        "Software Architecture",
+        "Hardware Troubleshooting"
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES DE TEMA (MODO CLARO Y OSCURO) --- */
+        :root {
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --secondary-text: #666666;
+            --border-color: #333333;
+            --btn-bg: #ffffff;
+            --btn-border: #d1d5db;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --secondary-text: #94a3b8;
+            --border-color: #64748b;
+            --btn-bg: #1e293b;
+            --btn-border: #475569;
+            --shadow: rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            box-shadow: 0 0 10px var(--shadow);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header h2 {
+            margin-top: 5px;
+            font-weight: normal;
+            color: var(--secondary-text);
+        }
+
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-info span, .contact-info a {
+            display: inline-block;
+            margin: 5px 10px 0 10px;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        ul.skills-list, ul.job-item ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .job-item, .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .company {
+            font-style: italic;
+            color: var(--secondary-text);
+        }
+
+        .date {
+            color: var(--secondary-text);
+            font-size: 0.9em;
+        }
+
+        /* --- ESTILOS DE LOS BOTONES FLOTANTES --- */
+        .btn-control {
+            position: fixed;
+            top: 15px;
+            z-index: 1000;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            border: 1px solid var(--btn-border);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 6px var(--shadow);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .btn-control:hover {
+            transform: translateY(-2px);
+        }
+
+        #lang-toggle {
+            left: 15px;
+        }
+
+        #theme-toggle {
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BOTONES EN LAS ESQUINAS SUPERIORES -->
+    <button id="lang-toggle" class="btn-control">🌐 EN / ES</button>
+    <button id="theme-toggle" class="btn-control">🌙</button>
+
+    <div class="resume-container">
+        <!-- HEADER -->
+        <header>
+            <h1>Gael Cano</h1>
+            <h2>Full Stack Software Developer & IT Consultant</h2>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina <small style="color: var(--secondary-text);">(La Plata | CABA | San Vicente | Brandsen)</small></span>
+                <span><i class="fas fa-envelope"></i> gaelcano@proton.me</span>
+                <a href="https://www.linkedin.com/in/GaelCanoDev" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/GaelCanoDev" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL PROFILE -->
+        <section>
+            <h3 class="section-title" data-es="Perfil Profesional" data-en="Professional Profile">Professional Profile</h3>
+            <p data-es="Profesional IT y Desarrollador Web en formación continua con sólida experiencia en soporte técnico, diagnóstico de hardware y gestión operativa de negocios. Estudiante de Analista en TIC destacado por la resolución analítica de problemas, el manejo eficiente de finanzas en proyectos y una visión orientada a la creación de software corporativo. Busco aportar mis habilidades técnicas y de atención al cliente para evolucionar hacia roles de Consultoría IT y Desarrollo Full Stack."
+               data-en="IT Professional and Web Developer in continuous training with solid experience in technical support, hardware diagnostics, and business operations management. ICT Analyst student recognized for analytical problem solving, efficient project finance management, and a vision oriented towards corporate software development. I seek to contribute my technical and customer service skills to evolve into IT Consulting and Full Stack Development roles.">
+                IT Professional and Web Developer in continuous training with solid experience in technical support, hardware diagnostics, and business operations management. ICT Analyst student recognized for analytical problem solving, efficient project finance management, and a vision oriented towards corporate software development. I seek to contribute my technical and customer service skills to evolve into IT Consulting and Full Stack Development roles.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h3 class="section-title" data-es="Habilidades Técnicas y Blandas" data-en="Technical and Soft Skills">Technical and Soft Skills</h3>
+            <ul class="skills-list">
+                <li><strong data-es="Desarrollo y Tecnología:" data-en="Development & Technology:">Development & Technology:</strong> <span data-es="Desarrollo Web Front-End (HTML, CSS, JavaScript), Diseño de Interfaces (UI), Ciclo de vida del Software." data-en="Front-End Web Development (HTML, CSS, JavaScript), UI Design, Software Life Cycle.">Front-End Web Development (HTML, CSS, JavaScript), UI Design, Software Life Cycle.</span></li>
+                <li><strong data-es="Soporte IT y Hardware:" data-en="IT Support & Hardware:">IT Support & Hardware:</strong> <span data-es="Diagnóstico y reparación de PC/Notebooks/Netbooks, Mantenimiento de Consolas y Dispositivos Móviles, Configuración de Equipos de Impresión, Troubleshooting." data-en="PC/Laptop diagnostic & repair, Console & Mobile maintenance, Printer setup, Troubleshooting.">PC/Laptop diagnostic & repair, Console & Mobile maintenance, Printer setup, Troubleshooting.</span></li>
+                <li><strong data-es="Gestión y Negocios:" data-en="Management & Business:">Management & Business:</strong> <span data-es="Administración Financiera, Control de Presupuestos e Insumos, Atención al Cliente, Gestión de Emprendimientos." data-en="Financial Management, Budget & Supply Control, Customer Service, Business Management.">Financial Management, Budget & Supply Control, Customer Service, Business Management.</span></li>
+                <li><strong data-es="Habilidades Blandas:" data-en="Soft Skills:">Soft Skills:</strong> <span data-es="Resolución de Problemas (Problem Solving), Autogestión, Pensamiento Analítico, Comunicación Efectiva." data-en="Problem Solving, Self-management, Analytical Thinking, Effective Communication.">Problem Solving, Self-management, Analytical Thinking, Effective Communication.</span></li>
+            </ul>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h3 class="section-title" data-es="Experiencia Profesional" data-en="Professional Experience">Professional Experience</h3>
+            
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <h4 data-es="Técnico de Soporte IT y Desarrollador Web Freelance" data-en="IT Support Technician & Freelance Web Developer">IT Support Technician & Freelance Web Developer</h4>
+                        <span class="company">GaelCanoDev | Domselaar, Argentina</span>
+                    </div>
+                    <div class="date" data-es="Enero de 2022 – Actualidad" data-en="January 2022 – Present">January 2022 – Present</div>
+                </div>
+                <ul>
+                    <li data-es="Ejecuto diagnósticos, mantenimiento preventivo y reparación integral de hardware y software (PC, notebooks, celulares y consolas), garantizando la operatividad de los dispositivos." data-en="I perform diagnostics, preventive maintenance, and comprehensive hardware/software repairs (PCs, laptops, smartphones, and consoles), ensuring device functionality.">I perform diagnostics, preventive maintenance, and comprehensive hardware/software repairs (PCs, laptops, smartphones, and consoles), ensuring device functionality.</li>
+                    <li data-es="Desarrollo interfaces y páginas web aplicando conocimientos de programación Front-End y diseño, traduciendo requerimientos en soluciones digitales funcionales." data-en="I develop web interfaces and sites applying Front-End programming and design knowledge, translating user requirements into functional digital solutions.">I develop web interfaces and sites applying Front-End programming and design knowledge, translating user requirements into functional digital solutions.</li>
+                    <li><strong data-es="Logro:" data-en="Achievement:">Achievement:</strong> <span data-es="Optimicé la vida útil de los equipos informáticos de la cartera de clientes mediante mantenimientos precisos, reduciendo incidencias técnicas recurrentes y logrando una alta fidelización del servicio." data-en="Optimized client IT hardware lifespan through precise maintenance, reducing recurring technical issues and securing high client retention.">Optimized client IT hardware lifespan through precise maintenance, reducing recurring technical issues and securing high client retention.</span></li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <h4 data-es="Co-Fundador y Gestor de Operaciones" data-en="Co-Founder & Operations Manager">Co-Founder & Operations Manager</h4>
+                        <span class="company">Gráfica Los Tres | Domselaar, Argentina</span>
+                    </div>
+                    <div class="date" data-es="Julio de 2020 – Actualidad" data-en="July 2020 – Present">July 2020 – Present</div>
+                </div>
+                <ul>
+                    <li data-es="Dirijo las operaciones integrales del negocio, incluyendo la gestión de producción gráfica, abastecimiento de insumos y mantenimiento de maquinaria de impresión continua." data-en="Lead complete business operations, including print production management, supply chain procurement, and maintenance of continuous printing machinery.">Lead complete business operations, including print production management, supply chain procurement, and maintenance of continuous printing machinery.</li>
+                    <li data-es="Administro la estructura financiera del emprendimiento, controlando el flujo de caja, presupuestos y costos operativos con un enfoque analítico y económico." data-en="Manage the business financial structure, monitoring cash flow, budgets, and operating expenses with an analytical approach.">Manage the business financial structure, monitoring cash flow, budgets, and operating expenses with an analytical approach.</li>
+                    <li><strong data-es="Logro:" data-en="Achievement:">Achievement:</strong> <span data-es="Impulsé la visibilidad de la marca y la captación de pedidos locales mediante la creación y ejecución de una estrategia de contenidos orgánicos en Facebook, Instagram y TikTok." data-en="Boosted brand visibility and local orders by designing and executing an organic content strategy on Facebook, Instagram, and TikTok.">Boosted brand visibility and local orders by designing and executing an organic content strategy on Facebook, Instagram, and TikTok.</span></li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <h4 data-es="Representante de Atención al Ciudadano" data-en="Citizen Service Representative">Citizen Service Representative</h4>
+                        <span class="company">Municipio de San Vicente | Domselaar, Argentina</span>
+                    </div>
+                    <div class="date" data-es="Diciembre de 2015 – Diciembre de 2019" data-en="December 2015 – December 2019">December 2015 – December 2019</div>
+                </div>
+                <ul>
+                    <li data-es="Gestioné la recepción y derivación de requerimientos y reclamos ciudadanos, operando canales de atención telefónica y presencial." data-en="Managed citizen requests and claims through phone and face-to-face service channels.">Managed citizen requests and claims through phone and face-to-face service channels.</li>
+                    <li><strong data-es="Logro:" data-en="Achievement:">Achievement:</strong> <span data-es="Mejoré la experiencia del usuario canalizando eficientemente las incidencias hacia las áreas técnicas correspondientes, garantizando un seguimiento adecuado." data-en="Enhanced user experience by efficiently channeling incidents to corresponding technical departments and ensuring adequate follow-up.">Enhanced user experience by efficiently channeling incidents to corresponding technical departments and ensuring adequate follow-up.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h3 class="section-title" data-es="Educación y Formación" data-en="Education & Training">Education & Training</h3>
+            
+            <div class="edu-item">
+                <div class="job-header">
+                    <div>
+                        <h4 data-es="Analista en TIC (En curso)" data-en="ICT Analyst (In progress)">ICT Analyst (In progress)</h4>
+                        <span class="company">Universidad Nacional de La Plata, La Plata</span>
+                    </div>
+                    <div class="date" data-es="Diciembre de 2021 – Actualidad" data-en="December 2021 – Present">December 2021 – Present</div>
+                </div>
+                <p class="edu-desc" data-es="Enfoque en fundamentos de informática, desarrollo de sistemas y tecnologías de la información." data-en="Focus on computer science fundamentals, systems development, and information technology.">Focus on computer science fundamentals, systems development, and information technology.</p>
+            </div>
+
+            <div class="edu-item">
+                <div class="job-header">
+                    <div>
+                        <h4 data-es="Bootcamp / Programa Intensivo en Desarrollo Web" data-en="Bootcamp / Intensive Web Development Program">Bootcamp / Intensive Web Development Program</h4>
+                        <span class="company">[Academy Name]</span>
+                    </div>
+                    <div class="date">[Month & Year]</div>
+                </div>
+                <p class="edu-desc" data-es="Formación intensiva orientada a la creación de proyectos web, maquetación y programación funcional." data-en="Intensive training oriented towards web project creation, layout, and functional programming.">Intensive training oriented towards web project creation, layout, and functional programming.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- SCRIPT DE FUNCIONALIDAD -->
+    <script>
+        const langBtn = document.getElementById('lang-toggle');
+        const themeBtn = document.getElementById('theme-toggle');
+
+        // --- MODO OSCURO / CLARO ---
+        themeBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                themeBtn.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeBtn.textContent = '☀️';
+            }
+        });
+
+        // --- CAMBIO DE IDIOMA (EN / ES por defecto EN) ---
+        let currentLang = 'en';
+
+        langBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            langBtn.textContent = currentLang === 'en' ? '🌐 EN / ES' : '🌐 ES / EN';
+            document.documentElement.setAttribute('lang', currentLang);
+            
+            document.querySelectorAll('[data-es][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+        });
+    </script>
+</body>
+</html>
